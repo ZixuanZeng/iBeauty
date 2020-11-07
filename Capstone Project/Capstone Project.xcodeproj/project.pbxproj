@@ -1,0 +1,666 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF10627C250A7FFE003520CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10627B250A7FFE003520CC /* AppDelegate.swift */; };
+		EF10627E250A7FFE003520CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10627D250A7FFE003520CC /* SceneDelegate.swift */; };
+		EF106280250A7FFE003520CC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10627F250A7FFE003520CC /* MainViewController.swift */; };
+		EF106283250A7FFE003520CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF106281250A7FFE003520CC /* Main.storyboard */; };
+		EF106286250A7FFE003520CC /* Capstone_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF106284250A7FFE003520CC /* Capstone_Project.xcdatamodeld */; };
+		EF106288250A7FFE003520CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF106287250A7FFE003520CC /* Assets.xcassets */; };
+		EF10628B250A7FFE003520CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF106289250A7FFE003520CC /* LaunchScreen.storyboard */; };
+		EF106296250A7FFE003520CC /* Capstone_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF106295250A7FFE003520CC /* Capstone_ProjectTests.swift */; };
+		EF1062A1250A7FFE003520CC /* Capstone_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1062A0250A7FFE003520CC /* Capstone_ProjectUITests.swift */; };
+		EF1062B2250A836B003520CC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1062B1250A836B003520CC /* CameraViewController.swift */; };
+		EF1062B6250A844A003520CC /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1062B5250A844A003520CC /* EditingViewController.swift */; };
+		EF1062B8250AD801003520CC /* AutoSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1062B7250AD801003520CC /* AutoSegue.swift */; };
+		EF5DD5FD2529680700F07727 /* PhotoEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5DD5FC2529680700F07727 /* PhotoEditing.swift */; };
+		EF5DD608253115BE00F07727 /* ControllerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5DD607253115BE00F07727 /* ControllerDisplay.swift */; };
+		EF5DD6152536691F00F07727 /* PyCoreImage.py in Resources */ = {isa = PBXBuildFile; fileRef = EF5DD6142536691F00F07727 /* PyCoreImage.py */; };
+		EFD29F742527B10700EA1644 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD29F732527B10700EA1644 /* Photo.swift */; };
+		EFF689DE2547B3ED0030346A /* ScrollingViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF689DD2547B3ED0030346A /* ScrollingViewContent.swift */; };
+		EFF689E325560A9A0030346A /* Kernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF689E225560A9A0030346A /* Kernel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF106292250A7FFE003520CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF106270250A7FFE003520CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF106277250A7FFE003520CC;
+			remoteInfo = "Capstone Project";
+		};
+		EF10629D250A7FFE003520CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF106270250A7FFE003520CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF106277250A7FFE003520CC;
+			remoteInfo = "Capstone Project";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF106278250A7FFE003520CC /* Capstone Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Capstone Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF10627B250A7FFE003520CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF10627D250A7FFE003520CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EF10627F250A7FFE003520CC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EF106282250A7FFE003520CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF106285250A7FFE003520CC /* Capstone_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Capstone_Project.xcdatamodel; sourceTree = "<group>"; };
+		EF106287250A7FFE003520CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF10628A250A7FFE003520CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF10628C250A7FFE003520CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF106291250A7FFE003520CC /* Capstone ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Capstone ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF106295250A7FFE003520CC /* Capstone_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capstone_ProjectTests.swift; sourceTree = "<group>"; };
+		EF106297250A7FFE003520CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF10629C250A7FFE003520CC /* Capstone ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Capstone ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF1062A0250A7FFE003520CC /* Capstone_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capstone_ProjectUITests.swift; sourceTree = "<group>"; };
+		EF1062A2250A7FFE003520CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF1062B1250A836B003520CC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		EF1062B5250A844A003520CC /* EditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
+		EF1062B7250AD801003520CC /* AutoSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSegue.swift; sourceTree = "<group>"; };
+		EF5DD5FC2529680700F07727 /* PhotoEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditing.swift; sourceTree = "<group>"; };
+		EF5DD607253115BE00F07727 /* ControllerDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDisplay.swift; sourceTree = "<group>"; };
+		EF5DD6142536691F00F07727 /* PyCoreImage.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = PyCoreImage.py; sourceTree = "<group>"; };
+		EFD29F732527B10700EA1644 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		EFF689DD2547B3ED0030346A /* ScrollingViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingViewContent.swift; sourceTree = "<group>"; };
+		EFF689E225560A9A0030346A /* Kernel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kernel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF106275250A7FFE003520CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF10628E250A7FFE003520CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF106299250A7FFE003520CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF10626F250A7FFE003520CC = {
+			isa = PBXGroup;
+			children = (
+				EF10627A250A7FFE003520CC /* Capstone Project */,
+				EF106294250A7FFE003520CC /* Capstone ProjectTests */,
+				EF10629F250A7FFE003520CC /* Capstone ProjectUITests */,
+				EF106279250A7FFE003520CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF106279250A7FFE003520CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF106278250A7FFE003520CC /* Capstone Project.app */,
+				EF106291250A7FFE003520CC /* Capstone ProjectTests.xctest */,
+				EF10629C250A7FFE003520CC /* Capstone ProjectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF10627A250A7FFE003520CC /* Capstone Project */ = {
+			isa = PBXGroup;
+			children = (
+				EF1062AF250A801F003520CC /* Model */,
+				EF1062AE250A8017003520CC /* View */,
+				EF1062B0250A8027003520CC /* Controller */,
+				EF106287250A7FFE003520CC /* Assets.xcassets */,
+				EF10628C250A7FFE003520CC /* Info.plist */,
+				EF106284250A7FFE003520CC /* Capstone_Project.xcdatamodeld */,
+			);
+			path = "Capstone Project";
+			sourceTree = "<group>";
+		};
+		EF106294250A7FFE003520CC /* Capstone ProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF106295250A7FFE003520CC /* Capstone_ProjectTests.swift */,
+				EF106297250A7FFE003520CC /* Info.plist */,
+			);
+			path = "Capstone ProjectTests";
+			sourceTree = "<group>";
+		};
+		EF10629F250A7FFE003520CC /* Capstone ProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF1062A0250A7FFE003520CC /* Capstone_ProjectUITests.swift */,
+				EF1062A2250A7FFE003520CC /* Info.plist */,
+			);
+			path = "Capstone ProjectUITests";
+			sourceTree = "<group>";
+		};
+		EF1062AE250A8017003520CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF10627D250A7FFE003520CC /* SceneDelegate.swift */,
+				EF106281250A7FFE003520CC /* Main.storyboard */,
+				EF106289250A7FFE003520CC /* LaunchScreen.storyboard */,
+				EFF689DD2547B3ED0030346A /* ScrollingViewContent.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EF1062AF250A801F003520CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFD29F732527B10700EA1644 /* Photo.swift */,
+				EF5DD5FC2529680700F07727 /* PhotoEditing.swift */,
+				EF5DD607253115BE00F07727 /* ControllerDisplay.swift */,
+				EF5DD6142536691F00F07727 /* PyCoreImage.py */,
+				EFF689E225560A9A0030346A /* Kernel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF1062B0250A8027003520CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EF10627B250A7FFE003520CC /* AppDelegate.swift */,
+				EF10627F250A7FFE003520CC /* MainViewController.swift */,
+				EF1062B1250A836B003520CC /* CameraViewController.swift */,
+				EF1062B5250A844A003520CC /* EditingViewController.swift */,
+				EF1062B7250AD801003520CC /* AutoSegue.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF106277250A7FFE003520CC /* Capstone Project */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF1062A5250A7FFE003520CC /* Build configuration list for PBXNativeTarget "Capstone Project" */;
+			buildPhases = (
+				EF106274250A7FFE003520CC /* Sources */,
+				EF106275250A7FFE003520CC /* Frameworks */,
+				EF106276250A7FFE003520CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Capstone Project";
+			productName = "Capstone Project";
+			productReference = EF106278250A7FFE003520CC /* Capstone Project.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF106290250A7FFE003520CC /* Capstone ProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF1062A8250A7FFE003520CC /* Build configuration list for PBXNativeTarget "Capstone ProjectTests" */;
+			buildPhases = (
+				EF10628D250A7FFE003520CC /* Sources */,
+				EF10628E250A7FFE003520CC /* Frameworks */,
+				EF10628F250A7FFE003520CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF106293250A7FFE003520CC /* PBXTargetDependency */,
+			);
+			name = "Capstone ProjectTests";
+			productName = "Capstone ProjectTests";
+			productReference = EF106291250A7FFE003520CC /* Capstone ProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF10629B250A7FFE003520CC /* Capstone ProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF1062AB250A7FFE003520CC /* Build configuration list for PBXNativeTarget "Capstone ProjectUITests" */;
+			buildPhases = (
+				EF106298250A7FFE003520CC /* Sources */,
+				EF106299250A7FFE003520CC /* Frameworks */,
+				EF10629A250A7FFE003520CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF10629E250A7FFE003520CC /* PBXTargetDependency */,
+			);
+			name = "Capstone ProjectUITests";
+			productName = "Capstone ProjectUITests";
+			productReference = EF10629C250A7FFE003520CC /* Capstone ProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF106270250A7FFE003520CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = "Zixuan Zeng";
+				TargetAttributes = {
+					EF106277250A7FFE003520CC = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					EF106290250A7FFE003520CC = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = EF106277250A7FFE003520CC;
+					};
+					EF10629B250A7FFE003520CC = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = EF106277250A7FFE003520CC;
+					};
+				};
+			};
+			buildConfigurationList = EF106273250A7FFE003520CC /* Build configuration list for PBXProject "Capstone Project" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF10626F250A7FFE003520CC;
+			productRefGroup = EF106279250A7FFE003520CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF106277250A7FFE003520CC /* Capstone Project */,
+				EF106290250A7FFE003520CC /* Capstone ProjectTests */,
+				EF10629B250A7FFE003520CC /* Capstone ProjectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF106276250A7FFE003520CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF10628B250A7FFE003520CC /* LaunchScreen.storyboard in Resources */,
+				EF106288250A7FFE003520CC /* Assets.xcassets in Resources */,
+				EF5DD6152536691F00F07727 /* PyCoreImage.py in Resources */,
+				EF106283250A7FFE003520CC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF10628F250A7FFE003520CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF10629A250A7FFE003520CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF106274250A7FFE003520CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFF689E325560A9A0030346A /* Kernel.swift in Sources */,
+				EF106286250A7FFE003520CC /* Capstone_Project.xcdatamodeld in Sources */,
+				EF1062B6250A844A003520CC /* EditingViewController.swift in Sources */,
+				EF5DD608253115BE00F07727 /* ControllerDisplay.swift in Sources */,
+				EFF689DE2547B3ED0030346A /* ScrollingViewContent.swift in Sources */,
+				EF1062B8250AD801003520CC /* AutoSegue.swift in Sources */,
+				EFD29F742527B10700EA1644 /* Photo.swift in Sources */,
+				EF106280250A7FFE003520CC /* MainViewController.swift in Sources */,
+				EF5DD5FD2529680700F07727 /* PhotoEditing.swift in Sources */,
+				EF10627C250A7FFE003520CC /* AppDelegate.swift in Sources */,
+				EF1062B2250A836B003520CC /* CameraViewController.swift in Sources */,
+				EF10627E250A7FFE003520CC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF10628D250A7FFE003520CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF106296250A7FFE003520CC /* Capstone_ProjectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF106298250A7FFE003520CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF1062A1250A7FFE003520CC /* Capstone_ProjectUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF106293250A7FFE003520CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF106277250A7FFE003520CC /* Capstone Project */;
+			targetProxy = EF106292250A7FFE003520CC /* PBXContainerItemProxy */;
+		};
+		EF10629E250A7FFE003520CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF106277250A7FFE003520CC /* Capstone Project */;
+			targetProxy = EF10629D250A7FFE003520CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF106281250A7FFE003520CC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF106282250A7FFE003520CC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EF106289250A7FFE003520CC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF10628A250A7FFE003520CC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF1062A3250A7FFE003520CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF1062A4250A7FFE003520CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF1062A6250A7FFE003520CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Capstone Project/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.hofstra.ZixuanZeng.Capstone-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF1062A7250A7FFE003520CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Capstone Project/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.hofstra.ZixuanZeng.Capstone-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EF1062A9250A7FFE003520CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Capstone ProjectTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.hofstra.ZixuanZeng.Capstone-ProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Capstone Project.app/Capstone Project";
+			};
+			name = Debug;
+		};
+		EF1062AA250A7FFE003520CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Capstone ProjectTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.hofstra.ZixuanZeng.Capstone-ProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Capstone Project.app/Capstone Project";
+			};
+			name = Release;
+		};
+		EF1062AC250A7FFE003520CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Capstone ProjectUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.hofstra.ZixuanZeng.Capstone-ProjectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Capstone Project";
+			};
+			name = Debug;
+		};
+		EF1062AD250A7FFE003520CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Capstone ProjectUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.hofstra.ZixuanZeng.Capstone-ProjectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Capstone Project";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF106273250A7FFE003520CC /* Build configuration list for PBXProject "Capstone Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF1062A3250A7FFE003520CC /* Debug */,
+				EF1062A4250A7FFE003520CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF1062A5250A7FFE003520CC /* Build configuration list for PBXNativeTarget "Capstone Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF1062A6250A7FFE003520CC /* Debug */,
+				EF1062A7250A7FFE003520CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF1062A8250A7FFE003520CC /* Build configuration list for PBXNativeTarget "Capstone ProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF1062A9250A7FFE003520CC /* Debug */,
+				EF1062AA250A7FFE003520CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF1062AB250A7FFE003520CC /* Build configuration list for PBXNativeTarget "Capstone ProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF1062AC250A7FFE003520CC /* Debug */,
+				EF1062AD250A7FFE003520CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EF106284250A7FFE003520CC /* Capstone_Project.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EF106285250A7FFE003520CC /* Capstone_Project.xcdatamodel */,
+			);
+			currentVersion = EF106285250A7FFE003520CC /* Capstone_Project.xcdatamodel */;
+			path = Capstone_Project.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EF106270250A7FFE003520CC /* Project object */;
+}

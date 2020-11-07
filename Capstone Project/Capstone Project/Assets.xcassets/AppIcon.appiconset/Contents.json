@@ -1,0 +1,116 @@
+{
+  "images" : [
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon.jpg",
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "20x20"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-13.jpg",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "20x20"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-11.jpg",
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-12.jpg",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-14.jpg",
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-15.jpg",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-16.jpg",
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "60x60"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-17.jpg",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "60x60"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-8.jpg",
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "size" : "20x20"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-7.jpg",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "20x20"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-9.jpg",
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-10.jpg",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-3.jpg",
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-4.jpg",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-5.jpg",
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "size" : "76x76"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-6.jpg",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "76x76"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-2.jpg",
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "size" : "83.5x83.5"
+    },
+    {
+      "filename" : "depositphotos_73152973-stock-illustration-logo-flower-icon-1.jpg",
+      "idiom" : "ios-marketing",
+      "scale" : "1x",
+      "size" : "1024x1024"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
