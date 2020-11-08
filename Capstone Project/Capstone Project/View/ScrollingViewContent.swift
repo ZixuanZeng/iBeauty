@@ -60,7 +60,7 @@ class ScrollingViewContent {
     func drawMoreRGBFilterButton(button: UIButton!, subview: UIView!) -> UIButton {
         let moreRGBFilter = UIButton(type: UIButton.ButtonType.roundedRect)
         moreRGBFilter.frame = CGRect(x: 50, y: 150, width: 300, height: 100)
-        moreRGBFilter.setTitle("More RGB", for: .normal)
+        moreRGBFilter.setTitle("Fujifilm Film", for: .normal)
         moreRGBFilter.titleLabel?.font = UIFont(name: "SavoyeLetPlain", size: 30)
         moreRGBFilter.tag = 3
         subview.addSubview(moreRGBFilter)

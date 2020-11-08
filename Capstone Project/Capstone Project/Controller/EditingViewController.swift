@@ -153,7 +153,19 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     // This event handler handles all the buttons actions inside filter adjustment view
     @IBAction func filterButtonsClicked(sender: UIButton) {
         if sender.tag == 1 {
-            self.imageView.image = editPhoto.addVignette(image: self.imageView.image!)
+            self.imageView.image = editPhoto.addFilmFilter(image: self.imageView.image!)
+        }
+        else if sender.tag == 2 {
+            self.imageView.image = editPhoto.addInstantFilmFilter(image: self.imageView.image!)
+        }
+        else if sender.tag == 3 {
+            self.imageView.image = editPhoto.addFujifilmFilter(image: self.imageView.image!)
+        }
+        else if sender.tag == 4 {
+            self.imageView.image = editPhoto.addGammaLight(image: self.imageView.image!)
+        }
+        else if sender.tag == 5 {
+            self.imageView.image = editPhoto.addToneCurve(image: self.imageView.image!)
         }
     }
     

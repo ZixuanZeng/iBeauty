@@ -203,31 +203,87 @@ class PhotoEditing {
         return UIImage(cgImage: newImage)
     }
     // Colors:
-    //CIColorCubeWithColorSpace
+    //CIPhotoEffectChrome
     //MARK: - Action for adding kodak film filter to an image
-//    func addKodakFilm(image: UIImage) -> UIImage {
-//        // Covert to CIImage
-//        let inputImage = CIImage(image: image)!
-//        // put all parameters in a dictionary
-//        let parameters = [
-//            "inputCubuDimension": NSNumber(value: 3.0),
-//            "inputCubeData": NSData(data: data as Data)
-//        ]
-//        let outputImage = inputImage.applyingFilter("CIColorCubeWithColorSpace", parameters: parameters)
-//        
-//        //draw context with defined parameters
-//        let newImage = context.createCGImage(outputImage, from: outputImage.extent)!
-//        return UIImage(cgImage: newImage)
-//    }
+    func addFilmFilter(image: UIImage) -> UIImage {
+        // Covert to CIImage
+        let inputImage = CIImage(image: image)!
+        
+        let outputImage = inputImage.applyingFilter("CIPhotoEffectChrome")
+        
+        //draw context with defined parameters
+        let newImage = context.createCGImage(outputImage, from: outputImage.extent)!
+        return UIImage(cgImage: newImage)
+    }
     
     //CIPhotoEffectInstant
-    
+    //MARK: - Action for adding instant film filter to an image
+    func addInstantFilmFilter(image: UIImage) -> UIImage {
+        // Covert to CIImage
+        let inputImage = CIImage(image: image)!
+        
+        let outputImage = inputImage.applyingFilter("CIPhotoEffectInstant")
+        
+        //draw context with defined parameters
+        let newImage = context.createCGImage(outputImage, from: outputImage.extent)!
+        return UIImage(cgImage: newImage)
+    }
     //CIColorCrossPolynomial
-    
+    //MARK: - Action for adding fujifilm filter on an image
+    func addFujifilmFilter(image: UIImage) -> UIImage {
+        // Covert to CIImage
+        let inputImage = CIImage(image: image)!
+        // put all parameters in a dictionary
+        let redFloatArray: [CGFloat] = [1, 0, 0, 0, 0, 0, 0, 0, 0]
+        let vectorRed = CIVector(values: redFloatArray, count: Int(UInt(redFloatArray.count)))
+        
+        let greenFloatArray: [CGFloat] = [0, 1.3, 0, 0, 0, 0, 0, 0, 0]
+        let vectorGreen = CIVector(values: greenFloatArray, count: Int(UInt(greenFloatArray.count)))
+        
+        let blueFloatArray: [CGFloat] = [0, 0, 1.2, 0, 0, 0, 0, 0, 0]
+        let vectorBlue = CIVector(values: blueFloatArray, count: Int(UInt(blueFloatArray.count)))
+        
+        let parameters = [
+            "inputRedCoefficients": vectorRed,
+            "inputGreenCoefficients": vectorGreen,
+            "inputBlueCoefficients": vectorBlue
+        ]
+        let outputImage = inputImage.applyingFilter("CIColorCrossPolynomial", parameters: parameters)
+        
+        //draw context with defined parameters
+        let newImage = context.createCGImage(outputImage, from: outputImage.extent)!
+        return UIImage(cgImage: newImage)
+    }
     //Lights:
     //CIGammaAdjust
+    //MARK: - Action for adding gamma light on an image
+    func addGammaLight(image: UIImage) -> UIImage {
+        // Covert to CIImage
+        let inputImage = CIImage(image: image)!
+        
+        // put all parameters in a dictionary
+        let parameters = [
+            "inputPower": NSNumber(value: 1.85)
+        ]
+        let outputImage = inputImage.applyingFilter("CIGammaAdjust", parameters: parameters)
+        
+        //draw context with defined parameters
+        let newImage = context.createCGImage(outputImage, from: outputImage.extent)!
+        return UIImage(cgImage: newImage)
+    }
     
     //CILinearToSRGBToneCurve: Learn how to write myself
+    //MARK: - Action for adding tone curve filter on an image
+    func addToneCurve(image: UIImage) -> UIImage {
+        // Covert to CIImage
+        let inputImage = CIImage(image: image)!
+        
+        let outputImage = inputImage.applyingFilter("CILinearToSRGBToneCurve")
+        
+        //draw context with defined parameters
+        let newImage = context.createCGImage(outputImage, from: outputImage.extent)!
+        return UIImage(cgImage: newImage)
+    }
     
     //Details:
     // DIY
