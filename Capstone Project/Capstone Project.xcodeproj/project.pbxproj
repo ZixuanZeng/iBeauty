@@ -24,7 +24,6 @@
 		EF5DD6152536691F00F07727 /* PyCoreImage.py in Resources */ = {isa = PBXBuildFile; fileRef = EF5DD6142536691F00F07727 /* PyCoreImage.py */; };
 		EFD29F742527B10700EA1644 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD29F732527B10700EA1644 /* Photo.swift */; };
 		EFF689DE2547B3ED0030346A /* ScrollingViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF689DD2547B3ED0030346A /* ScrollingViewContent.swift */; };
-		EFF689E325560A9A0030346A /* Kernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF689E225560A9A0030346A /* Kernel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +67,6 @@
 		EF5DD6142536691F00F07727 /* PyCoreImage.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = PyCoreImage.py; sourceTree = "<group>"; };
 		EFD29F732527B10700EA1644 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		EFF689DD2547B3ED0030346A /* ScrollingViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingViewContent.swift; sourceTree = "<group>"; };
-		EFF689E225560A9A0030346A /* Kernel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kernel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +163,6 @@
 				EF5DD5FC2529680700F07727 /* PhotoEditing.swift */,
 				EF5DD607253115BE00F07727 /* ControllerDisplay.swift */,
 				EF5DD6142536691F00F07727 /* PyCoreImage.py */,
-				EFF689E225560A9A0030346A /* Kernel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -314,7 +311,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFF689E325560A9A0030346A /* Kernel.swift in Sources */,
 				EF106286250A7FFE003520CC /* Capstone_Project.xcdatamodeld in Sources */,
 				EF1062B6250A844A003520CC /* EditingViewController.swift in Sources */,
 				EF5DD608253115BE00F07727 /* ControllerDisplay.swift in Sources */,

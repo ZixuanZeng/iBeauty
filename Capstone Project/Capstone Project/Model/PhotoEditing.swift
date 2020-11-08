@@ -286,5 +286,37 @@ class PhotoEditing {
     }
     
     //Details:
-    // DIY
+    // DIY S Curve
+    //MARK: - Action for adding RGB tone curve filter on an image
+    func addRGBToneCurve(image: UIImage) -> UIImage {
+        let inputImage = CIImage(image: image)!
+        // vector variables for RGB points along y-axis of the image
+        let inputRedValues = CIVector(values: [0.0, 0.20, 0.5, 0.80, 1.0], count: 5)
+        let inputGreenValues = CIVector(values: [0.0, 0.20, 0.5, 0.80, 1.0], count: 5)
+        let inputBlueValues = CIVector(values: [0.0, 0.20, 0.5, 0.80, 1.0], count: 5)
+        // All the parameters needed for the filter implementation (x-axis 5 points)
+        let redParameter = ["inputPoint0": CIVector(x: 0.0, y: inputRedValues.value(at: 0)),
+                            "inputPoint1": CIVector(x: 0.25, y: inputRedValues.value(at: 1)),
+                            "inputPoint2": CIVector(x: 0.5, y: inputRedValues.value(at: 2)),
+                            "inputPoint3": CIVector(x: 0.75, y: inputRedValues.value(at: 3)),
+                            "inputPoint4": CIVector(x: 1.0, y: inputRedValues.value(at: 4))]
+        
+        let greenParameter = ["inputPoint0": CIVector(x: 0.0, y: inputGreenValues.value(at: 0)),
+                              "inputPoint1": CIVector(x: 0.25, y: inputGreenValues.value(at: 1)),
+                              "inputPoint2": CIVector(x: 0.5, y: inputGreenValues.value(at: 2)),
+                              "inputPoint3": CIVector(x: 0.75, y: inputGreenValues.value(at: 3)),
+                              "inputPoint4": CIVector(x: 1.0, y: inputGreenValues.value(at: 4))]
+        
+        let blueParameter = ["inputPoint0": CIVector(x: 0.0, y: inputBlueValues.value(at: 0)),
+                              "inputPoint1": CIVector(x: 0.25, y: inputBlueValues.value(at: 1)),
+                              "inputPoint2": CIVector(x: 0.5, y: inputBlueValues.value(at: 2)),
+                              "inputPoint3": CIVector(x: 0.75, y: inputBlueValues.value(at: 3)),
+                              "inputPoint4": CIVector(x: 1.0, y: inputBlueValues.value(at: 4))]
+        let outputRedImage = inputImage.applyingFilter("CIToneCurve", parameters: redParameter)
+        let outputGreenImage = outputRedImage.applyingFilter("CIToneCurve", parameters: greenParameter)
+        let outputFinalAndBlueImage = outputGreenImage.applyingFilter("CIToneCurve", parameters: blueParameter)
+        //draw context with defined parameters
+        let newImage = context.createCGImage(outputFinalAndBlueImage, from: outputFinalAndBlueImage.extent)!
+        return UIImage(cgImage: newImage)
+    }
 }

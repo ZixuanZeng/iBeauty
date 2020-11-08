@@ -192,6 +192,9 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
             else if sender.tag == 5 {
                 self.imageView.image = editPhoto.addToneCurve(image: self.imageView.image!)
             }
+            else{
+                self.imageView.image = editPhoto.addRGBToneCurve(image: self.imageView.image!)
+            }
         } else {
             alertNilImage()
         }
