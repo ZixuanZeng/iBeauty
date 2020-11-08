@@ -79,93 +79,121 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var sCurveFilter: UIButton!
     
     @IBAction func buttonOneClick(_ sender: UIButton) {
-        if adjustmentMode == BarButtons.light.rawValue {
-            
-        }
-        else if adjustmentMode == BarButtons.color.rawValue {
-            
-        }
-        else if adjustmentMode == BarButtons.details.rawValue {
-            imageView.image = editPhoto.addVignette(image: imageView.image!)
+        if self.imageView.image != nil {
+            if adjustmentMode == BarButtons.light.rawValue {
+                
+            }
+            else if adjustmentMode == BarButtons.color.rawValue {
+                
+            }
+            else if adjustmentMode == BarButtons.details.rawValue {
+                imageView.image = editPhoto.addVignette(image: imageView.image!)
+            }
+        } else {
+            alertNilImage()
         }
     }
     
     @IBAction func buttonTwoClick(_ sender: UIButton) {
-        if adjustmentMode == BarButtons.light.rawValue {
-            
-        }
-        else if adjustmentMode == BarButtons.color.rawValue {
-            imageView.image = editPhoto.convertToGrayScale(image: imageView.image!)
-        }
-        else if adjustmentMode == BarButtons.details.rawValue {
-            
+        if self.imageView.image != nil {
+            if adjustmentMode == BarButtons.light.rawValue {
+                
+            }
+            else if adjustmentMode == BarButtons.color.rawValue {
+                imageView.image = editPhoto.convertToGrayScale(image: imageView.image!)
+            }
+            else if adjustmentMode == BarButtons.details.rawValue {
+                
+            }
+        } else {
+            alertNilImage()
         }
     }
     
     @IBAction func buttonThreeClick(_ sender: UIButton) {
-        if adjustmentMode == BarButtons.light.rawValue {
-            
-        }
-        else if adjustmentMode == BarButtons.color.rawValue {
-            
-        }
-        else if adjustmentMode == BarButtons.details.rawValue {
-            imageView.image = editPhoto.reduceNoise(image: imageView.image!)
+        if self.imageView.image != nil {
+            if adjustmentMode == BarButtons.light.rawValue {
+                
+            }
+            else if adjustmentMode == BarButtons.color.rawValue {
+                
+            }
+            else if adjustmentMode == BarButtons.details.rawValue {
+                imageView.image = editPhoto.reduceNoise(image: imageView.image!)
+            }
+        } else {
+            alertNilImage()
         }
     }
     
     @IBAction func sliderOneChange(_ sender: UISlider) {
-        if adjustmentMode == BarButtons.light.rawValue {
-            imageView.image = editPhoto.adjustExposure(image: imageView.image!, value: Int(sender.value))
-        }
-        else if adjustmentMode == BarButtons.color.rawValue {
-            imageView.image = editPhoto.adjustHue(image: imageView.image!, value: Int(sender.value))
-        }
-        else if adjustmentMode == BarButtons.details.rawValue {
-            imageView.image = editPhoto.adjustContrast(image: imageView.image!, value: sender.value)
+        if self.imageView.image != nil {
+            if adjustmentMode == BarButtons.light.rawValue {
+                imageView.image = editPhoto.adjustExposure(image: imageView.image!, value: Int(sender.value))
+            }
+            else if adjustmentMode == BarButtons.color.rawValue {
+                imageView.image = editPhoto.adjustHue(image: imageView.image!, value: Int(sender.value))
+            }
+            else if adjustmentMode == BarButtons.details.rawValue {
+                imageView.image = editPhoto.adjustContrast(image: imageView.image!, value: sender.value)
+            }
+        } else {
+            alertNilImage()
         }
     }
     
     @IBAction func sliderTwoChange(_ sender: UISlider) {
-        if adjustmentMode == BarButtons.light.rawValue {
-            imageView.image = editPhoto.adjustHighlightAndShadow(image: imageView.image!, highlightAmount: Int(sender.value), shadowAmount: Int(sliderThree.value))
-        }
-        else if adjustmentMode == BarButtons.color.rawValue {
-            imageView.image = editPhoto.adjustTemperatureAndTint(image: imageView.image!, temperature: sender.value)
-        }
-        else if adjustmentMode == BarButtons.details.rawValue {
-            imageView.image = editPhoto.adjustSharpness(image: imageView.image!, radiusAmount: Int(sender.value), intensityAmount: Int(sliderThree.value))
+        if self.imageView.image != nil {
+            if adjustmentMode == BarButtons.light.rawValue {
+                imageView.image = editPhoto.adjustHighlightAndShadow(image: imageView.image!, highlightAmount: Int(sender.value), shadowAmount: Int(sliderThree.value))
+            }
+            else if adjustmentMode == BarButtons.color.rawValue {
+                imageView.image = editPhoto.adjustTemperatureAndTint(image: imageView.image!, temperature: sender.value)
+            }
+            else if adjustmentMode == BarButtons.details.rawValue {
+                imageView.image = editPhoto.adjustSharpness(image: imageView.image!, radiusAmount: Int(sender.value), intensityAmount: Int(sliderThree.value))
+            }
+        } else {
+            alertNilImage()
         }
     }
     
     @IBAction func sliderThreeChange(_ sender: UISlider) {
-        if adjustmentMode == BarButtons.light.rawValue {
-            imageView.image = editPhoto.adjustHighlightAndShadow(image: imageView.image!, highlightAmount: Int(sliderTwo.value), shadowAmount: Int(sender.value))
-        }
-        else if adjustmentMode == BarButtons.color.rawValue {
-            imageView.image = editPhoto.adjustSaturation(image: imageView.image!, value: Int(sender.value))
-        }
-        else if adjustmentMode == BarButtons.color.rawValue {
-            imageView.image = editPhoto.adjustSharpness(image: imageView.image!, radiusAmount: Int(sliderTwo.value), intensityAmount: Int(sender.value))
+        if self.imageView.image != nil {
+            if adjustmentMode == BarButtons.light.rawValue {
+                imageView.image = editPhoto.adjustHighlightAndShadow(image: imageView.image!, highlightAmount: Int(sliderTwo.value), shadowAmount: Int(sender.value))
+            }
+            else if adjustmentMode == BarButtons.color.rawValue {
+                imageView.image = editPhoto.adjustSaturation(image: imageView.image!, value: Int(sender.value))
+            }
+            else if adjustmentMode == BarButtons.color.rawValue {
+                imageView.image = editPhoto.adjustSharpness(image: imageView.image!, radiusAmount: Int(sliderTwo.value), intensityAmount: Int(sender.value))
+            }
+        } else {
+            alertNilImage()
         }
     }
     
     // This event handler handles all the buttons actions inside filter adjustment view
     @IBAction func filterButtonsClicked(sender: UIButton) {
-        if sender.tag == 1 {
-            self.imageView.image = editPhoto.addFilmFilter(image: self.imageView.image!)
-        }
-        else if sender.tag == 2 {
-            self.imageView.image = editPhoto.addInstantFilmFilter(image: self.imageView.image!)
-        }
-        else if sender.tag == 3 {
-            self.imageView.image = editPhoto.addFujifilmFilter(image: self.imageView.image!)
-        }
-        else if sender.tag == 4 {
-            self.imageView.image = editPhoto.addGammaLight(image: self.imageView.image!)
-        }
-        else if sender.tag == 5 {
-            self.imageView.image = editPhoto.addToneCurve(image: self.imageView.image!)
+        if self.imageView.image != nil {
+            if sender.tag == 1 {
+                self.imageView.image = editPhoto.addFilmFilter(image: self.imageView.image!)
+            }
+            else if sender.tag == 2 {
+                self.imageView.image = editPhoto.addInstantFilmFilter(image: self.imageView.image!)
+            }
+            else if sender.tag == 3 {
+                self.imageView.image = editPhoto.addFujifilmFilter(image: self.imageView.image!)
+            }
+            else if sender.tag == 4 {
+                self.imageView.image = editPhoto.addGammaLight(image: self.imageView.image!)
+            }
+            else if sender.tag == 5 {
+                self.imageView.image = editPhoto.addToneCurve(image: self.imageView.image!)
+            }
+        } else {
+            alertNilImage()
         }
     }
     
@@ -381,6 +409,22 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.dismiss(animated: true, completion: nil)
     }
     
+    //MARK: - Alert message window for nil image inside UIImageView
+    func alertNilImage() {
+        let alert = UIAlertController(title: "Alert", message: "Please import a photo from Album!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cacel", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Import", style: UIAlertAction.Style.default, handler: alertHandlerWithImportPhotoFuntion(alert:)))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    //MARK: - Alert handler for handling nil image in UIImageView, this one allows importing images
+    func alertHandlerWithImportPhotoFuntion(alert: UIAlertAction!) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true;
+        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        present(imagePicker, animated: true, completion: nil)
+    }
 }
 
 // enum data structure to hold bar buttons info
