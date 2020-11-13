@@ -299,6 +299,7 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func saveToEditingView(sender: UIButton){
         adjustmentView.isHidden = true
         adjustmentBar.isHidden = false
+        savePhoto(finalImage: self.imageView.image!)
     }
     
     @IBAction func cancelToEditingView(sender: UIButton){
@@ -427,6 +428,15 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
         imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    //MARK: - Save function for saving all edited photos
+    func savePhoto(finalImage: UIImage!) {
+        UIImageWriteToSavedPhotosAlbum(finalImage, self, Selector(("image:didFinishSavingWithError:contextInfo:")), nil)
+    }
+    
+    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        print("Done")
     }
 }
 
