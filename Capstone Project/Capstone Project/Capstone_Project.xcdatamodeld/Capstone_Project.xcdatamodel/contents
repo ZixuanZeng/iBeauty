@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="AdjustmentParameters" representedClassName="AdjustmentParameters" syncable="YES" codeGenerationType="class">
+        <attribute name="adjustmentID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="buttonFive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="buttonFour" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="buttonOne" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES"/>
@@ -11,18 +12,30 @@
         <attribute name="sliderThree" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="sliderTwo" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="typeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="getAdjustmentParameters" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageAdjustment" inverseName="getAdjustmentParameters" inverseEntity="ImageAdjustment"/>
+        <relationship name="getAdjustmentType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AdjustmentTypes" inverseName="getAdjustmentType" inverseEntity="AdjustmentTypes"/>
+        <relationship name="getImageCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageCategories" inverseName="getImageCategory" inverseEntity="ImageCategories"/>
     </entity>
     <entity name="AdjustmentTypes" representedClassName="AdjustmentTypes" syncable="YES" codeGenerationType="class">
         <attribute name="typeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="typeName" optional="YES" attributeType="String"/>
+        <relationship name="getAdjustmentType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AdjustmentParameters" inverseName="getAdjustmentType" inverseEntity="AdjustmentParameters"/>
+    </entity>
+    <entity name="ImageAdjustment" representedClassName="ImageAdjustment" syncable="YES" codeGenerationType="class">
+        <attribute name="adjustmentID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="categoryID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="getAdjustmentParameters" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AdjustmentParameters" inverseName="getAdjustmentParameters" inverseEntity="AdjustmentParameters"/>
     </entity>
     <entity name="ImageCategories" representedClassName="ImageCategories" syncable="YES" codeGenerationType="class">
         <attribute name="categoryID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="categoryName" optional="YES" attributeType="String"/>
+        <relationship name="getImageCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AdjustmentParameters" inverseName="getImageCategory" inverseEntity="AdjustmentParameters"/>
     </entity>
     <elements>
-        <element name="AdjustmentParameters" positionX="-63" positionY="-18" width="128" height="193"/>
-        <element name="ImageCategories" positionX="-54" positionY="0" width="128" height="59"/>
-        <element name="AdjustmentTypes" positionX="-36" positionY="9" width="128" height="59"/>
+        <element name="AdjustmentParameters" positionX="-342.37646484375" positionY="-85.71035766601562" width="128" height="253"/>
+        <element name="ImageCategories" positionX="-584.414306640625" positionY="-118.7416229248047" width="127.815673828125" height="88"/>
+        <element name="AdjustmentTypes" positionX="-99.405029296875" positionY="-111.6087341308594" width="128" height="88"/>
+        <element name="ImageAdjustment" positionX="-351.435302734375" positionY="-299.3803100585938" width="128" height="103"/>
     </elements>
 </model>
