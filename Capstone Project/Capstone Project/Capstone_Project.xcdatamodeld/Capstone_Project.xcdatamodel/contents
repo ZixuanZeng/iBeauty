@@ -1,49 +1,62 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="AdjustmentParameters" representedClassName="AdjustmentParameters" syncable="YES" codeGenerationType="class">
-        <attribute name="adjustmentID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="buttonFive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="buttonFour" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="buttonOne" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="buttonThree" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="buttonTwo" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="categoryID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    <entity name="ColorParameters" representedClassName="ColorParameters" syncable="YES" codeGenerationType="class">
+        <attribute name="button" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="colorID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="sliderOne" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="sliderThree" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="sliderTwo" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="typeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="getAdjustmentParameters" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageAdjustment" inverseName="getAdjustmentParameters" inverseEntity="ImageAdjustment"/>
-        <relationship name="getAdjustmentType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AdjustmentTypes" inverseName="getAdjustmentType" inverseEntity="AdjustmentTypes"/>
-        <relationship name="getImageCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageCategories" inverseName="getImageCategory" inverseEntity="ImageCategories"/>
+        <relationship name="getColorID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EditedImage" inverseName="getColorID" inverseEntity="EditedImage"/>
     </entity>
-    <entity name="AdjustmentTypes" representedClassName="AdjustmentTypes" syncable="YES" codeGenerationType="class">
+    <entity name="DetailParameters" representedClassName="DetailParameters" syncable="YES" codeGenerationType="class">
+        <attribute name="buttonOne" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="buttonTwo" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="detailID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sliderOne" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sliderThree" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sliderTwo" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="getDetailID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EditedImage" inverseName="getDetailID" inverseEntity="EditedImage"/>
+    </entity>
+    <entity name="EditedImage" representedClassName="EditedImage" syncable="YES" codeGenerationType="class">
+        <attribute name="categoryID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="colorID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="detailID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="filterID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lightID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="getCategoryID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageCategories" inverseName="getImageCategory" inverseEntity="ImageCategories"/>
+        <relationship name="getColorID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ColorParameters" inverseName="getColorID" inverseEntity="ColorParameters"/>
+        <relationship name="getDetailID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DetailParameters" inverseName="getDetailID" inverseEntity="DetailParameters"/>
+        <relationship name="getFilterID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FilterParameters" inverseName="getFilterID" inverseEntity="FilterParameters"/>
+        <relationship name="getLightID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LightParameters" inverseName="getLightID" inverseEntity="LightParameters"/>
+    </entity>
+    <entity name="FilterParameters" representedClassName="FilterParameters" syncable="YES" codeGenerationType="class">
         <attribute name="buttonFive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="buttonFour" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="buttonOne" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="buttonThree" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="buttonThree" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="buttonTwo" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="sliderOne" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="sliderThree" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="sliderTwo" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="typeID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="typeName" optional="YES" attributeType="String"/>
-        <relationship name="getAdjustmentType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AdjustmentParameters" inverseName="getAdjustmentType" inverseEntity="AdjustmentParameters"/>
-    </entity>
-    <entity name="ImageAdjustment" representedClassName="ImageAdjustment" syncable="YES" codeGenerationType="class">
-        <attribute name="adjustmentID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="categoryID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="imageID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="getAdjustmentParameters" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AdjustmentParameters" inverseName="getAdjustmentParameters" inverseEntity="AdjustmentParameters"/>
+        <attribute name="filterID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="getFilterID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EditedImage" inverseName="getFilterID" inverseEntity="EditedImage"/>
     </entity>
     <entity name="ImageCategories" representedClassName="ImageCategories" syncable="YES" codeGenerationType="class">
         <attribute name="categoryID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="categoryName" optional="YES" attributeType="String"/>
-        <relationship name="getImageCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AdjustmentParameters" inverseName="getImageCategory" inverseEntity="AdjustmentParameters"/>
+        <relationship name="getImageCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EditedImage" inverseName="getCategoryID" inverseEntity="EditedImage"/>
+    </entity>
+    <entity name="LightParameters" representedClassName="LightParameters" syncable="YES" codeGenerationType="class">
+        <attribute name="lightID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sliderOne" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sliderThree" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sliderTwo" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="getLightID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EditedImage" inverseName="getLightID" inverseEntity="EditedImage"/>
     </entity>
     <elements>
-        <element name="AdjustmentParameters" positionX="-342.37646484375" positionY="-85.71035766601562" width="128" height="253"/>
-        <element name="ImageCategories" positionX="-584.414306640625" positionY="-118.7416229248047" width="127.815673828125" height="88"/>
-        <element name="AdjustmentTypes" positionX="-99.405029296875" positionY="-111.6087341308594" width="128" height="208"/>
-        <element name="ImageAdjustment" positionX="-351.435302734375" positionY="-299.3803100585938" width="128" height="103"/>
+        <element name="ImageCategories" positionX="-879.879638671875" positionY="-244.7776794433594" width="127.815673828125" height="88"/>
+        <element name="EditedImage" positionX="-559.121337890625" positionY="-209.1329956054688" width="128" height="194"/>
+        <element name="LightParameters" positionX="-303.46142578125" positionY="-191.4590454101562" width="128" height="104"/>
+        <element name="ColorParameters" positionX="-831.769775390625" positionY="-77.04983520507812" width="128" height="119"/>
+        <element name="DetailParameters" positionX="-579.861083984375" positionY="-415.5928802490234" width="128" height="134"/>
+        <element name="FilterParameters" positionX="-552.8857421875" positionY="64.80596923828125" width="128" height="134"/>
     </elements>
 </model>

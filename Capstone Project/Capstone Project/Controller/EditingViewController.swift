@@ -26,6 +26,7 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     let editPhoto = PhotoEditing()
     let controller = ControllerDisplay()
     let scrollingView = ScrollingViewContent()
+    let dataHandler = DataHandler()
     
     // all the variables for tool bar buttons
     @IBOutlet var exposureButton: UIBarButtonItem!
@@ -284,7 +285,7 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func navigateToFilterEditingView(_ sender: UIBarButtonItem) {
         filterAdjustmentSubview.isHidden = false
         adjustmentBar.isHidden = true
-        adjustmentMode = BarButtons.curve.rawValue
+        adjustmentMode = BarButtons.filters.rawValue
         kodakFilmFilter.addTarget(self, action: #selector(filterButtonsClicked(sender:)), for: .touchUpInside) // Add an event listener here
         instantFilmFilter.addTarget(self, action: #selector(filterButtonsClicked(sender:)), for: .touchUpInside)
         moreRGBFilter.addTarget(self, action: #selector(filterButtonsClicked(sender:)), for: .touchUpInside)
@@ -446,7 +447,7 @@ enum BarButtons: Int {
     case light = 1
     case color = 2
     case details = 3
-    case curve = 4
+    case filters = 4
     case smart = 5
 }
 
