@@ -299,7 +299,6 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func saveToEditingView(sender: UIButton){
         adjustmentView.isHidden = true
         adjustmentBar.isHidden = false
-        //savePhoto(finalImage: self.imageView.image!)
     }
     
     @IBAction func cancelToEditingView(sender: UIButton){
@@ -313,7 +312,6 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func saveAndExitToEditingView(_ sender: UIButton) {
         filterAdjustmentSubview.isHidden = true
         adjustmentBar.isHidden = false
-        //savePhoto(finalImage: self.imageView.image!)
     }
     
     @IBAction func cancelAndExitToEditingView(_ sender: UIButton) {

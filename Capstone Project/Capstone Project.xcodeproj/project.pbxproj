@@ -22,6 +22,7 @@
 		EF5DD5FD2529680700F07727 /* PhotoEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5DD5FC2529680700F07727 /* PhotoEditing.swift */; };
 		EF5DD608253115BE00F07727 /* ControllerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5DD607253115BE00F07727 /* ControllerDisplay.swift */; };
 		EF5DD6152536691F00F07727 /* PyCoreImage.py in Resources */ = {isa = PBXBuildFile; fileRef = EF5DD6142536691F00F07727 /* PyCoreImage.py */; };
+		EF7CF055256B2FAA00B83EDB /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CF054256B2FAA00B83EDB /* DataHandler.swift */; };
 		EFD29F742527B10700EA1644 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD29F732527B10700EA1644 /* Photo.swift */; };
 		EFF689DE2547B3ED0030346A /* ScrollingViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF689DD2547B3ED0030346A /* ScrollingViewContent.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		EF5DD5FC2529680700F07727 /* PhotoEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditing.swift; sourceTree = "<group>"; };
 		EF5DD607253115BE00F07727 /* ControllerDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDisplay.swift; sourceTree = "<group>"; };
 		EF5DD6142536691F00F07727 /* PyCoreImage.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = PyCoreImage.py; sourceTree = "<group>"; };
+		EF7CF054256B2FAA00B83EDB /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		EFD29F732527B10700EA1644 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		EFF689DD2547B3ED0030346A /* ScrollingViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingViewContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +165,7 @@
 				EF5DD5FC2529680700F07727 /* PhotoEditing.swift */,
 				EF5DD607253115BE00F07727 /* ControllerDisplay.swift */,
 				EF5DD6142536691F00F07727 /* PyCoreImage.py */,
+				EF7CF054256B2FAA00B83EDB /* DataHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				EF1062B6250A844A003520CC /* EditingViewController.swift in Sources */,
 				EF5DD608253115BE00F07727 /* ControllerDisplay.swift in Sources */,
 				EFF689DE2547B3ED0030346A /* ScrollingViewContent.swift in Sources */,
+				EF7CF055256B2FAA00B83EDB /* DataHandler.swift in Sources */,
 				EF1062B8250AD801003520CC /* AutoSegue.swift in Sources */,
 				EFD29F742527B10700EA1644 /* Photo.swift in Sources */,
 				EF106280250A7FFE003520CC /* MainViewController.swift in Sources */,
