@@ -48,7 +48,7 @@ class DataHandler: NSManagedObject {
     }
     
     //MARK: - Action for saving all the parameter values from color adjustment panel (for color adjustment only)
-    func saveColorParameters(colorID: Int, button: Bool, sliderOne: Float, sliderTwo: Float, sliderThree: Float) {
+    func saveColorParameters(colorID: Int, button: Float, sliderOne: Float, sliderTwo: Float, sliderThree: Float) {
         
         // Before saving or retrieving anything from Core Data store, first get delegate on NSManagedObjectContext
         guard let appDelegate =
@@ -80,7 +80,7 @@ class DataHandler: NSManagedObject {
     }
     
     //MARK: - Action for saving all the parameter values from detail adjustment panel (for detail adjustment only)
-    func saveDetailParameters(detailID: Int, buttonOne: Bool, buttonTwo: Bool, sliderOne: Float, sliderTwo: Float, sliderThree: Float) {
+    func saveDetailParameters(detailID: Int, buttonOne: Float, buttonTwo: Float, sliderOne: Float, sliderTwo: Float, sliderThree: Float) {
         
         // Before saving or retrieving anything from Core Data store, first get delegate on NSManagedObjectContext
         guard let appDelegate =
@@ -113,7 +113,7 @@ class DataHandler: NSManagedObject {
     }
     
     //MARK: - Action for saving all the parameter values from filter adjustment panel (for filter adjustment only)
-    func saveFilterParameters(filterID: Int, buttonOne: Bool, buttonTwo: Bool, buttonThree: Bool, buttonFour: Bool, buttonFive: Bool) {
+    func saveFilterParameters(filterID: Int, buttonOne: Float, buttonTwo: Float, buttonThree: Float, buttonFour: Float, buttonFive: Float, buttonSix: Float) {
         
         // Before saving or retrieving anything from Core Data store, first get delegate on NSManagedObjectContext
         guard let appDelegate =
@@ -135,6 +135,40 @@ class DataHandler: NSManagedObject {
         adjustmentParameters.setValue(buttonThree, forKeyPath: "buttonThree")
         adjustmentParameters.setValue(buttonFour, forKeyPath: "buttonFour")
         adjustmentParameters.setValue(buttonFive, forKeyPath: "buttonFive")
+        adjustmentParameters.setValue(buttonSix, forKeyPath: "buttonSix")
+        
+        // Commit changes to this entity and save to disk by calling save on the managed object context
+        do {
+            try managedContext.save()
+            adjustments.append(adjustmentParameters)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    //MARK: - Action for saving all the parameter values from all panels to Core Data
+    func saveAllAdjustmentParameters(imageID: Int, categoryID: Int, lightID: Int, colorID: Int, detailID: Int, filterID: Int) {
+        
+        // Before saving or retrieving anything from Core Data store, first get delegate on NSManagedObjectContext
+        guard let appDelegate =
+                UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        // Create a new managed object and insert it into the managed object context
+        let entity = NSEntityDescription.entity(forEntityName: "EditedImage", in: managedContext)!
+        
+        let adjustmentParameters = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        // Set each attribute in this entity using key-value coding
+        adjustmentParameters.setValue(imageID, forKeyPath: "imageID")
+        adjustmentParameters.setValue(categoryID, forKeyPath: "categoryID")
+        adjustmentParameters.setValue(lightID, forKeyPath: "lightID")
+        adjustmentParameters.setValue(colorID, forKeyPath: "colorID")
+        adjustmentParameters.setValue(detailID, forKeyPath: "detailID")
+        adjustmentParameters.setValue(filterID, forKeyPath: "filterID")
         
         // Commit changes to this entity and save to disk by calling save on the managed object context
         do {
@@ -164,5 +198,30 @@ class DataHandler: NSManagedObject {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
+    }
+    
+    //MARK: - Action for getting count of entity elements
+    func getNumberOfObject(_entityName: String) -> Int {
+        // Variable to hold number of objects
+        var numberOfObject: Int = 0
+        // Get contact to Core Data, managed object context
+        guard let appDelegate =
+                UIApplication.shared.delegate as? AppDelegate else {
+            return 0
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        // Fetch action
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: _entityName)
+        
+        // fetch number of objects
+        do {
+            numberOfObject = try managedContext.count(for: fetchRequest)
+        } catch let error as NSError {
+            print("Could not count objects.\(error), \(error.userInfo)")
+        }
+        
+        return numberOfObject
     }
 }

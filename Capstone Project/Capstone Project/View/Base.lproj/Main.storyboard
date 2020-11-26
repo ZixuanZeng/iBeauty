@@ -477,6 +477,9 @@
                                     <constraint firstAttribute="width" constant="46" id="LXz-Kj-gDg"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="camera.rotate" catalog="system"/>
+                                <connections>
+                                    <action selector="flipCamera:" destination="EIm-Wi-ArW" eventType="touchUpInside" id="Eh7-cS-3pu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1z-SQ-V1s" userLabel="Shutter">
                                 <rect key="frame" x="171" y="733" width="72" height="73"/>

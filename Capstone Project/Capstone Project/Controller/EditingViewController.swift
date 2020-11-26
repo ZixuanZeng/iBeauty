@@ -28,6 +28,20 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     let scrollingView = ScrollingViewContent()
     let dataHandler = DataHandler()
     
+    // Following variables are to hold number of current objects in each entity (table) so that it can assign correct photo adjustment ID to every adjustment
+    var imageID: Int!
+    var categoryID: Int!
+    var filterAdjustmentID: Int!
+    var lightAdjustmentID: Int!
+    var colorAdjustmentID: Int!
+    var detailAdjustmentID: Int!
+    
+    // Initialize the structs for adjustment parameter values holding
+    var lightValue = light()
+    var colorValue = color()
+    var detailValue = details()
+    var filterValue = filters()
+    
     // all the variables for tool bar buttons
     @IBOutlet var exposureButton: UIBarButtonItem!
     
@@ -82,13 +96,15 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func buttonOneClick(_ sender: UIButton) {
         if self.imageView.image != nil {
             if adjustmentMode == BarButtons.light.rawValue {
-                
+                // Only when light adjustment has this button, in my design, it does not have this button
             }
             else if adjustmentMode == BarButtons.color.rawValue {
                 
             }
             else if adjustmentMode == BarButtons.details.rawValue {
                 imageView.image = editPhoto.addVignette(image: imageView.image!)
+                // Set the adjustment boolean value to the struct instance; prepare the use for data storage
+                detailValue.buttonOne = 1.0
             }
         } else {
             alertNilImage()
@@ -98,10 +114,11 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func buttonTwoClick(_ sender: UIButton) {
         if self.imageView.image != nil {
             if adjustmentMode == BarButtons.light.rawValue {
-                
+                // This is for future UI upgrade only
             }
             else if adjustmentMode == BarButtons.color.rawValue {
                 imageView.image = editPhoto.convertToGrayScale(image: imageView.image!)
+                colorValue.button = 1.0
             }
             else if adjustmentMode == BarButtons.details.rawValue {
                 
@@ -121,6 +138,7 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
             }
             else if adjustmentMode == BarButtons.details.rawValue {
                 imageView.image = editPhoto.reduceNoise(image: imageView.image!)
+                detailValue.buttonTwo = 1.0
             }
         } else {
             alertNilImage()
@@ -131,12 +149,16 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         if self.imageView.image != nil {
             if adjustmentMode == BarButtons.light.rawValue {
                 imageView.image = editPhoto.adjustExposure(image: imageView.image!, value: Int(sender.value))
+                // // Set the adjustment float value to the struct instance; prepare the use for data storage
+                lightValue.sliderOne = sender.value
             }
             else if adjustmentMode == BarButtons.color.rawValue {
                 imageView.image = editPhoto.adjustHue(image: imageView.image!, value: Int(sender.value))
+                colorValue.sliderOne = sender.value
             }
             else if adjustmentMode == BarButtons.details.rawValue {
                 imageView.image = editPhoto.adjustContrast(image: imageView.image!, value: sender.value)
+                detailValue.sliderOne = sender.value
             }
         } else {
             alertNilImage()
@@ -147,12 +169,15 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         if self.imageView.image != nil {
             if adjustmentMode == BarButtons.light.rawValue {
                 imageView.image = editPhoto.adjustHighlightAndShadow(image: imageView.image!, highlightAmount: Int(sender.value), shadowAmount: Int(sliderThree.value))
+                lightValue.sliderTwo = sender.value
             }
             else if adjustmentMode == BarButtons.color.rawValue {
                 imageView.image = editPhoto.adjustTemperatureAndTint(image: imageView.image!, temperature: sender.value)
+                colorValue.sliderTwo = sender.value
             }
             else if adjustmentMode == BarButtons.details.rawValue {
                 imageView.image = editPhoto.adjustSharpness(image: imageView.image!, radiusAmount: Int(sender.value), intensityAmount: Int(sliderThree.value))
+                detailValue.sliderThree = sender.value
             }
         } else {
             alertNilImage()
@@ -163,12 +188,15 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         if self.imageView.image != nil {
             if adjustmentMode == BarButtons.light.rawValue {
                 imageView.image = editPhoto.adjustHighlightAndShadow(image: imageView.image!, highlightAmount: Int(sliderTwo.value), shadowAmount: Int(sender.value))
+                lightValue.sliderThree = sender.value
             }
             else if adjustmentMode == BarButtons.color.rawValue {
                 imageView.image = editPhoto.adjustSaturation(image: imageView.image!, value: Int(sender.value))
+                colorValue.sliderThree = sender.value
             }
             else if adjustmentMode == BarButtons.color.rawValue {
                 imageView.image = editPhoto.adjustSharpness(image: imageView.image!, radiusAmount: Int(sliderTwo.value), intensityAmount: Int(sender.value))
+                detailValue.sliderThree = sender.value
             }
         } else {
             alertNilImage()
@@ -180,21 +208,27 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         if self.imageView.image != nil {
             if sender.tag == 1 {
                 self.imageView.image = editPhoto.addFilmFilter(image: self.imageView.image!)
+                filterValue.buttonOne = 1.0
             }
             else if sender.tag == 2 {
                 self.imageView.image = editPhoto.addInstantFilmFilter(image: self.imageView.image!)
+                filterValue.buttonTwo = 1.0
             }
             else if sender.tag == 3 {
                 self.imageView.image = editPhoto.addFujifilmFilter(image: self.imageView.image!)
+                filterValue.buttonThree = 1.0
             }
             else if sender.tag == 4 {
                 self.imageView.image = editPhoto.addGammaLight(image: self.imageView.image!)
+                filterValue.buttonFour = 1.0
             }
             else if sender.tag == 5 {
                 self.imageView.image = editPhoto.addToneCurve(image: self.imageView.image!)
+                filterValue.buttonFive = 1.0
             }
             else{
                 self.imageView.image = editPhoto.addRGBToneCurve(image: self.imageView.image!)
+                filterValue.buttonSix = 1.0
             }
         } else {
             alertNilImage()
@@ -300,6 +334,18 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func saveToEditingView(sender: UIButton){
         adjustmentView.isHidden = true
         adjustmentBar.isHidden = false
+        if adjustmentMode == BarButtons.light.rawValue {
+            lightAdjustmentID = dataHandler.getNumberOfObject(_entityName: "LightParameters") + 1
+            dataHandler.saveLightParameters(lightID: lightAdjustmentID, sliderOne: lightValue.sliderOne!, sliderTwo: lightValue.sliderTwo!, sliderThree: lightValue.sliderThree!)
+        }
+        else if adjustmentMode == BarButtons.color.rawValue {
+            colorAdjustmentID = dataHandler.getNumberOfObject(_entityName: "ColorParameters") + 1
+            dataHandler.saveColorParameters(colorID: colorAdjustmentID, button: colorValue.button!, sliderOne: colorValue.sliderOne!, sliderTwo: colorValue.sliderTwo!, sliderThree: colorValue.sliderThree!)
+        }
+        else if adjustmentMode == BarButtons.details.rawValue {
+            detailAdjustmentID = dataHandler.getNumberOfObject(_entityName: "DetailParameters") + 1
+            dataHandler.saveDetailParameters(detailID: detailAdjustmentID, buttonOne: detailValue.buttonOne!, buttonTwo: detailValue.buttonTwo!, sliderOne: detailValue.sliderOne!, sliderTwo: detailValue.sliderTwo!, sliderThree: detailValue.sliderThree!)
+        }
     }
     
     @IBAction func cancelToEditingView(sender: UIButton){
@@ -313,6 +359,9 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func saveAndExitToEditingView(_ sender: UIButton) {
         filterAdjustmentSubview.isHidden = true
         adjustmentBar.isHidden = false
+        // This is to generate an ID in ascending order like the primary key in data base
+        filterAdjustmentID = dataHandler.getNumberOfObject(_entityName: "FilterParameters") + 1
+        dataHandler.saveFilterParameters(filterID: filterAdjustmentID, buttonOne: filterValue.buttonOne!, buttonTwo: filterValue.buttonTwo!, buttonThree: filterValue.buttonThree!, buttonFour: filterValue.buttonFour!, buttonFive: filterValue.buttonFive!, buttonSix: filterValue.buttonSix!)
     }
     
     @IBAction func cancelAndExitToEditingView(_ sender: UIButton) {
@@ -433,6 +482,13 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     //MARK: - Action for saving post-edit photos to photo album
     @IBAction func saveToPhotoAlbum(_ sender: UIButton) {
         savePhoto(finalImage: self.imageView.image!)
+        imageID = dataHandler.getNumberOfObject(_entityName: "EditedImage") + 1
+        dataHandler.saveAllAdjustmentParameters(imageID: imageID, categoryID: 0, lightID: lightAdjustmentID, colorID: colorAdjustmentID, detailID: detailAdjustmentID, filterID: filterAdjustmentID)
+        // Remember to reset all the parameters to original position
+        lightValue.reset()
+        colorValue.reset()
+        detailValue.reset()
+        filterValue.reset()
     }
     
     //MARK: - Save function for saving all edited photos to photo album
@@ -450,4 +506,3 @@ enum BarButtons: Int {
     case filters = 4
     case smart = 5
 }
-
