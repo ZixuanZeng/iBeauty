@@ -179,6 +179,43 @@ class DataHandler: NSManagedObject {
         }
     }
     
+    //MARK: - Action for saving image category info into ImageCategories entity
+    func saveImageCategory(categoryID: Int) {
+        // Before saving or retrieving anything from Core Data store, first get delegate on NSManagedObjectContext
+        guard let appDelegate =
+                UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        // Create a new managed object and insert it into the managed object context
+        let entity = NSEntityDescription.entity(forEntityName: "ImageCategories", in: managedContext)!
+        
+        let imageInfo = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        // Set each attribute using key-value coding
+        switch categoryID {
+        case 1:
+            imageInfo.setValue(categoryID, forKeyPath: "categoryID")
+            imageInfo.setValue("Landscape", forKeyPath: "categoryName")
+        case 2:
+            imageInfo.setValue(categoryID, forKeyPath: "categoryID")
+            imageInfo.setValue("Portrait", forKeyPath: "categoryName")
+        default:
+            imageInfo.setValue(categoryID, forKeyPath: "categoryID")
+            imageInfo.setValue("Documentary", forKeyPath: "categoryName")
+        }
+        
+        // Commit changes to this entity and save to disk by calling save on the managed object context
+        do {
+            try managedContext.save()
+            adjustments.append(imageInfo)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
     //MARK: - Action for fetching data from Core Data database
     func fetchAllParameters(_entityName: String) {
         // Get contact to Core Data, managed object context

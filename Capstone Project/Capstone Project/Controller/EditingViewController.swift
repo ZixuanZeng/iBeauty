@@ -27,6 +27,7 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     let controller = ControllerDisplay()
     let scrollingView = ScrollingViewContent()
     let dataHandler = DataHandler()
+    let imageClassifier = NeuralNetwork()
     
     // Following variables are to hold number of current objects in each entity (table) so that it can assign correct photo adjustment ID to every adjustment
     var imageID: Int!
@@ -483,7 +484,18 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func saveToPhotoAlbum(_ sender: UIButton) {
         savePhoto(finalImage: self.imageView.image!)
         imageID = dataHandler.getNumberOfObject(_entityName: "EditedImage") + 1
-        dataHandler.saveAllAdjustmentParameters(imageID: imageID, categoryID: 0, lightID: lightAdjustmentID, colorID: colorAdjustmentID, detailID: detailAdjustmentID, filterID: filterAdjustmentID)
+        if imageClassifier.category == "Landscape" {
+            categoryID = 1
+        }
+        else if imageClassifier.category == "Portrait" {
+            categoryID = 2
+        }
+        else{
+            categoryID = 3
+        }
+        // Save all necessary data into Core Data using model built
+        dataHandler.saveAllAdjustmentParameters(imageID: imageID, categoryID: categoryID, lightID: lightAdjustmentID, colorID: colorAdjustmentID, detailID: detailAdjustmentID, filterID: filterAdjustmentID)
+        dataHandler.saveImageCategory(categoryID: categoryID)
         // Remember to reset all the parameters to original position
         lightValue.reset()
         colorValue.reset()

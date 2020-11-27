@@ -9,7 +9,9 @@
 import UIKit
 import CoreData
 import CoreML
+import Vision
+import ImageIO
 
 class MahineLearning: NSManagedObject {
-
+    
 }
