@@ -12,7 +12,7 @@ import UIKit
 
 /* This class implements the Core Image and MATLAB models to edit photos*/
 
-class PhotoEditing {
+internal class PhotoEditing {
     
     // define context globally for reuse
     //let eagleContext = CVEAGLContext(api: .openGLES3)

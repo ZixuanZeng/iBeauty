@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-// A singleton for sharing objects
+// For sharing objects
 class Photo {
     var photo: UIImage!
     
@@ -21,7 +21,7 @@ class Photo {
     }
 }
 
-/* another way of writing singleton:
+/* A way of writing singleton:
  
  class Photo {
     static let sharedPhoto = Photo(photo: UIImage!)

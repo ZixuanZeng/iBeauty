@@ -29,6 +29,10 @@
         <relationship name="getDetailID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DetailParameters" inverseName="getDetailID" inverseEntity="DetailParameters"/>
         <relationship name="getFilterID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FilterParameters" inverseName="getFilterID" inverseEntity="FilterParameters"/>
         <relationship name="getLightID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LightParameters" inverseName="getLightID" inverseEntity="LightParameters"/>
+        <relationship name="provideColorID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MLPredictionData" inverseName="getColorID" inverseEntity="MLPredictionData"/>
+        <relationship name="provideDetailID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MLPredictionData" inverseName="getDetailID" inverseEntity="MLPredictionData"/>
+        <relationship name="provideFilterID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MLPredictionData" inverseName="getFilterID" inverseEntity="MLPredictionData"/>
+        <relationship name="provideLightID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MLPredictionData" inverseName="getLightID" inverseEntity="MLPredictionData"/>
     </entity>
     <entity name="FilterParameters" representedClassName="FilterParameters" syncable="YES" codeGenerationType="class">
         <attribute name="buttonFive" optional="YES" attributeType="Float" usesScalarValueType="YES"/>
@@ -44,6 +48,7 @@
         <attribute name="categoryID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="categoryName" optional="YES" attributeType="String"/>
         <relationship name="getImageCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EditedImage" inverseName="getCategoryID" inverseEntity="EditedImage"/>
+        <relationship name="provideImageCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MLPredictionData" inverseName="getCategoryName" inverseEntity="MLPredictionData"/>
     </entity>
     <entity name="LightParameters" representedClassName="LightParameters" syncable="YES" codeGenerationType="class">
         <attribute name="lightID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -52,12 +57,39 @@
         <attribute name="sliderTwo" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="getLightID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EditedImage" inverseName="getLightID" inverseEntity="EditedImage"/>
     </entity>
+    <entity name="MLPredictionData" representedClassName="MLPredictionData" syncable="YES" codeGenerationType="class">
+        <attribute name="bw" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="contrast" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="exposure" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="fujifilm" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="gamma" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="highlight" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="hue" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="imageCategory" optional="YES" attributeType="String"/>
+        <attribute name="instant" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="kodak" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="nr" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="rgb" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="saturation" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="shadow" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="si" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sr" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="tone" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="vignette" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="getCategoryName" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageCategories" inverseName="provideImageCategory" inverseEntity="ImageCategories"/>
+        <relationship name="getColorID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EditedImage" inverseName="provideColorID" inverseEntity="EditedImage"/>
+        <relationship name="getDetailID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EditedImage" inverseName="provideDetailID" inverseEntity="EditedImage"/>
+        <relationship name="getFilterID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EditedImage" inverseName="provideFilterID" inverseEntity="EditedImage"/>
+        <relationship name="getLightID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EditedImage" inverseName="provideLightID" inverseEntity="EditedImage"/>
+    </entity>
     <elements>
-        <element name="ColorParameters" positionX="-831.769775390625" positionY="-77.04983520507812" width="128" height="119"/>
+        <element name="ColorParameters" positionX="-767.554443359375" positionY="-379.1462249755859" width="128" height="119"/>
         <element name="DetailParameters" positionX="-579.861083984375" positionY="-415.5928802490234" width="128" height="134"/>
-        <element name="EditedImage" positionX="-559.121337890625" positionY="-209.1329956054688" width="128" height="194"/>
+        <element name="EditedImage" positionX="-559.121337890625" positionY="-209.1329956054688" width="128" height="268"/>
         <element name="FilterParameters" positionX="-552.8857421875" positionY="64.80596923828125" width="128" height="149"/>
-        <element name="ImageCategories" positionX="-879.879638671875" positionY="-244.7776794433594" width="127.815673828125" height="88"/>
+        <element name="ImageCategories" positionX="-879.879638671875" positionY="-244.7776794433594" width="127.815673828125" height="103"/>
         <element name="LightParameters" positionX="-303.46142578125" positionY="-191.4590454101562" width="128" height="104"/>
+        <element name="MLPredictionData" positionX="-1087.89208984375" positionY="-343.1779632568359" width="128" height="403"/>
     </elements>
 </model>

@@ -28,14 +28,16 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     let scrollingView = ScrollingViewContent()
     let dataHandler = DataHandler()
     let imageClassifier = NeuralNetwork()
+    // Getting SVM model singleton here
+    let adjustmentClassifier = SVM.sharedSVM.svm
     
     // Following variables are to hold number of current objects in each entity (table) so that it can assign correct photo adjustment ID to every adjustment
-    var imageID: Int!
-    var categoryID: Int!
-    var filterAdjustmentID: Int!
-    var lightAdjustmentID: Int!
-    var colorAdjustmentID: Int!
-    var detailAdjustmentID: Int!
+    var imageID: Int?
+    var categoryID: Int?
+    var filterAdjustmentID: Int? = nil
+    var lightAdjustmentID: Int? = nil
+    var colorAdjustmentID: Int? = nil
+    var detailAdjustmentID: Int? = nil
     
     // Initialize the structs for adjustment parameter values holding
     var lightValue = light()
@@ -337,15 +339,15 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         adjustmentBar.isHidden = false
         if adjustmentMode == BarButtons.light.rawValue {
             lightAdjustmentID = dataHandler.getNumberOfObject(_entityName: "LightParameters") + 1
-            dataHandler.saveLightParameters(lightID: lightAdjustmentID, sliderOne: lightValue.sliderOne!, sliderTwo: lightValue.sliderTwo!, sliderThree: lightValue.sliderThree!)
+            dataHandler.saveLightParameters(lightID: lightAdjustmentID!, sliderOne: lightValue.sliderOne!, sliderTwo: lightValue.sliderTwo!, sliderThree: lightValue.sliderThree!)
         }
         else if adjustmentMode == BarButtons.color.rawValue {
             colorAdjustmentID = dataHandler.getNumberOfObject(_entityName: "ColorParameters") + 1
-            dataHandler.saveColorParameters(colorID: colorAdjustmentID, button: colorValue.button!, sliderOne: colorValue.sliderOne!, sliderTwo: colorValue.sliderTwo!, sliderThree: colorValue.sliderThree!)
+            dataHandler.saveColorParameters(colorID: colorAdjustmentID!, button: colorValue.button!, sliderOne: colorValue.sliderOne!, sliderTwo: colorValue.sliderTwo!, sliderThree: colorValue.sliderThree!)
         }
         else if adjustmentMode == BarButtons.details.rawValue {
             detailAdjustmentID = dataHandler.getNumberOfObject(_entityName: "DetailParameters") + 1
-            dataHandler.saveDetailParameters(detailID: detailAdjustmentID, buttonOne: detailValue.buttonOne!, buttonTwo: detailValue.buttonTwo!, sliderOne: detailValue.sliderOne!, sliderTwo: detailValue.sliderTwo!, sliderThree: detailValue.sliderThree!)
+            dataHandler.saveDetailParameters(detailID: detailAdjustmentID!, buttonOne: detailValue.buttonOne!, buttonTwo: detailValue.buttonTwo!, sliderOne: detailValue.sliderOne!, sliderTwo: detailValue.sliderTwo!, sliderThree: detailValue.sliderThree!)
         }
     }
     
@@ -353,6 +355,7 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         imageView.image = tempImage
         adjustmentView.isHidden = true
         adjustmentBar.isHidden = false
+        lightAdjustmentID = nil; colorAdjustmentID = nil; detailAdjustmentID = nil
     }
     
     //MARK: - Action for jumping back to editing view from filters subview
@@ -362,13 +365,14 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         adjustmentBar.isHidden = false
         // This is to generate an ID in ascending order like the primary key in data base
         filterAdjustmentID = dataHandler.getNumberOfObject(_entityName: "FilterParameters") + 1
-        dataHandler.saveFilterParameters(filterID: filterAdjustmentID, buttonOne: filterValue.buttonOne!, buttonTwo: filterValue.buttonTwo!, buttonThree: filterValue.buttonThree!, buttonFour: filterValue.buttonFour!, buttonFive: filterValue.buttonFive!, buttonSix: filterValue.buttonSix!)
+        dataHandler.saveFilterParameters(filterID: filterAdjustmentID!, buttonOne: filterValue.buttonOne!, buttonTwo: filterValue.buttonTwo!, buttonThree: filterValue.buttonThree!, buttonFour: filterValue.buttonFour!, buttonFive: filterValue.buttonFive!, buttonSix: filterValue.buttonSix!)
     }
     
     @IBAction func cancelAndExitToEditingView(_ sender: UIButton) {
         imageView.image = tempImage
         filterAdjustmentSubview.isHidden = true
         adjustmentBar.isHidden = false
+        filterAdjustmentID = nil
     }
     
 
@@ -494,8 +498,10 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
             categoryID = 3
         }
         // Save all necessary data into Core Data using model built
-        dataHandler.saveAllAdjustmentParameters(imageID: imageID, categoryID: categoryID, lightID: lightAdjustmentID, colorID: colorAdjustmentID, detailID: detailAdjustmentID, filterID: filterAdjustmentID)
-        dataHandler.saveImageCategory(categoryID: categoryID)
+        if lightAdjustmentID != nil || colorAdjustmentID != nil || detailAdjustmentID != nil || filterAdjustmentID != nil {
+            dataHandler.saveAllAdjustmentParameters(imageID: imageID, categoryID: categoryID, lightID: lightAdjustmentID, colorID: colorAdjustmentID, detailID: detailAdjustmentID, filterID: filterAdjustmentID)
+        }
+        dataHandler.saveImageCategory(categoryID: categoryID!)
         // Remember to reset all the parameters to original position
         lightValue.reset()
         colorValue.reset()

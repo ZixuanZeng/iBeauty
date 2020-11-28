@@ -12,7 +12,8 @@ import CoreML
 import ImageIO
 import Vision
 
-class NeuralNetwork: NSManagedObject {
+// This class implements Neural Networks API functions to communicate with Core ML
+internal class NeuralNetwork: NSManagedObject {
     // This variable is to hold classification result
     var category: String = " "
     // Here is to integrate my models to the app

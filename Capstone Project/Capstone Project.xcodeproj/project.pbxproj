@@ -19,12 +19,12 @@
 		EF1062B2250A836B003520CC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1062B1250A836B003520CC /* CameraViewController.swift */; };
 		EF1062B6250A844A003520CC /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1062B5250A844A003520CC /* EditingViewController.swift */; };
 		EF1062B8250AD801003520CC /* AutoSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1062B7250AD801003520CC /* AutoSegue.swift */; };
+		EF31FDA0257218DC00477E8E /* SupportVectorMachine.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EF31FD9F257218DC00477E8E /* SupportVectorMachine.mlmodel */; };
+		EF5AFE5C25721C0300F7014F /* SVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5AFE5B25721C0300F7014F /* SVM.swift */; };
 		EF5DD5FD2529680700F07727 /* PhotoEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5DD5FC2529680700F07727 /* PhotoEditing.swift */; };
 		EF5DD608253115BE00F07727 /* ControllerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5DD607253115BE00F07727 /* ControllerDisplay.swift */; };
 		EF7CF055256B2FAA00B83EDB /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CF054256B2FAA00B83EDB /* DataHandler.swift */; };
-		EF7CF05D256F14D800B83EDB /* SupportVectorMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CF05C256F14D800B83EDB /* SupportVectorMachine.swift */; };
 		EF7CF062256F152700B83EDB /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CF061256F152700B83EDB /* NeuralNetwork.swift */; };
-		EF7CF067256F157100B83EDB /* MahineLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CF066256F157100B83EDB /* MahineLearning.swift */; };
 		EF7CF06C256F403000B83EDB /* InputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CF06B256F403000B83EDB /* InputData.swift */; };
 		EF7CF0742570567900B83EDB /* YOLOv3TinyInt8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EF7CF0732570567900B83EDB /* YOLOv3TinyInt8LUT.mlmodel */; };
 		EF7CF079257071DE00B83EDB /* ImageCategoryClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EF7CF078257071DE00B83EDB /* ImageCategoryClassifier.mlmodel */; };
@@ -49,6 +49,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EF7CF0842571F3FC00B83EDB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		EF106278250A7FFE003520CC /* Capstone Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Capstone Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF10627B250A7FFE003520CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,12 +81,12 @@
 		EF1062B1250A836B003520CC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		EF1062B5250A844A003520CC /* EditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
 		EF1062B7250AD801003520CC /* AutoSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSegue.swift; sourceTree = "<group>"; };
+		EF31FD9F257218DC00477E8E /* SupportVectorMachine.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SupportVectorMachine.mlmodel; sourceTree = "<group>"; };
+		EF5AFE5B25721C0300F7014F /* SVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVM.swift; sourceTree = "<group>"; };
 		EF5DD5FC2529680700F07727 /* PhotoEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditing.swift; sourceTree = "<group>"; };
 		EF5DD607253115BE00F07727 /* ControllerDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDisplay.swift; sourceTree = "<group>"; };
 		EF7CF054256B2FAA00B83EDB /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
-		EF7CF05C256F14D800B83EDB /* SupportVectorMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportVectorMachine.swift; sourceTree = "<group>"; };
 		EF7CF061256F152700B83EDB /* NeuralNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
-		EF7CF066256F157100B83EDB /* MahineLearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MahineLearning.swift; sourceTree = "<group>"; };
 		EF7CF06B256F403000B83EDB /* InputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputData.swift; sourceTree = "<group>"; };
 		EF7CF0732570567900B83EDB /* YOLOv3TinyInt8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3TinyInt8LUT.mlmodel; sourceTree = "<group>"; };
 		EF7CF078257071DE00B83EDB /* ImageCategoryClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageCategoryClassifier.mlmodel; sourceTree = "<group>"; };
@@ -171,16 +184,16 @@
 		EF1062AF250A801F003520CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EF31FD9F257218DC00477E8E /* SupportVectorMachine.mlmodel */,
 				EF7CF078257071DE00B83EDB /* ImageCategoryClassifier.mlmodel */,
 				EF7CF0732570567900B83EDB /* YOLOv3TinyInt8LUT.mlmodel */,
 				EFD29F732527B10700EA1644 /* Photo.swift */,
 				EF5DD5FC2529680700F07727 /* PhotoEditing.swift */,
 				EF5DD607253115BE00F07727 /* ControllerDisplay.swift */,
 				EF7CF054256B2FAA00B83EDB /* DataHandler.swift */,
-				EF7CF05C256F14D800B83EDB /* SupportVectorMachine.swift */,
 				EF7CF061256F152700B83EDB /* NeuralNetwork.swift */,
-				EF7CF066256F157100B83EDB /* MahineLearning.swift */,
 				EF7CF06B256F403000B83EDB /* InputData.swift */,
+				EF5AFE5B25721C0300F7014F /* SVM.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,12 +220,15 @@
 				EF106274250A7FFE003520CC /* Sources */,
 				EF106275250A7FFE003520CC /* Frameworks */,
 				EF106276250A7FFE003520CC /* Resources */,
+				EF7CF0842571F3FC00B83EDB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Capstone Project";
+			packageProductDependencies = (
+			);
 			productName = "Capstone Project";
 			productReference = EF106278250A7FFE003520CC /* Capstone Project.app */;
 			productType = "com.apple.product-type.application";
@@ -285,6 +301,8 @@
 				Base,
 			);
 			mainGroup = EF10626F250A7FFE003520CC;
+			packageReferences = (
+			);
 			productRefGroup = EF106279250A7FFE003520CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -331,19 +349,19 @@
 				EF106286250A7FFE003520CC /* Capstone_Project.xcdatamodeld in Sources */,
 				EF1062B6250A844A003520CC /* EditingViewController.swift in Sources */,
 				EF5DD608253115BE00F07727 /* ControllerDisplay.swift in Sources */,
-				EF7CF067256F157100B83EDB /* MahineLearning.swift in Sources */,
 				EF7CF06C256F403000B83EDB /* InputData.swift in Sources */,
 				EFF689DE2547B3ED0030346A /* ScrollingViewContent.swift in Sources */,
 				EF7CF055256B2FAA00B83EDB /* DataHandler.swift in Sources */,
+				EF5AFE5C25721C0300F7014F /* SVM.swift in Sources */,
 				EF7CF079257071DE00B83EDB /* ImageCategoryClassifier.mlmodel in Sources */,
 				EF7CF0742570567900B83EDB /* YOLOv3TinyInt8LUT.mlmodel in Sources */,
 				EF1062B8250AD801003520CC /* AutoSegue.swift in Sources */,
 				EFD29F742527B10700EA1644 /* Photo.swift in Sources */,
 				EF106280250A7FFE003520CC /* MainViewController.swift in Sources */,
+				EF31FDA0257218DC00477E8E /* SupportVectorMachine.mlmodel in Sources */,
 				EF5DD5FD2529680700F07727 /* PhotoEditing.swift in Sources */,
 				EF10627C250A7FFE003520CC /* AppDelegate.swift in Sources */,
 				EF1062B2250A836B003520CC /* CameraViewController.swift in Sources */,
-				EF7CF05D256F14D800B83EDB /* SupportVectorMachine.swift in Sources */,
 				EF10627E250A7FFE003520CC /* SceneDelegate.swift in Sources */,
 				EF7CF062256F152700B83EDB /* NeuralNetwork.swift in Sources */,
 			);
