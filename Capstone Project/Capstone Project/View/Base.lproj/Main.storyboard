@@ -185,7 +185,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="GFL-Nc-1Bb"/>
-                                    <barButtonItem tag="5" title="Auto" id="1AT-ev-ghG"/>
+                                    <barButtonItem tag="5" title="Auto" id="1AT-ev-ghG">
+                                        <connections>
+                                            <action selector="performSmartEditing:" destination="Ane-RX-KPW" id="Zvb-CM-Kgc"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.7754637598991394" green="0.53378444910049438" blue="0.9115568995475769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
