@@ -334,16 +334,22 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     //MARK: - Action for performing auto/smart-editing (Version 1 for further development)
     @IBAction func performSmartEditing(_ sender: UIBarButtonItem) {
-        if imageClassifier.category == "Landscape" {
-            imageView.image = editPhoto.addFilmFilter(image: imageView.image!)
-            imageView.image = editPhoto.addToneCurve(image: imageView.image!)
-        }
-        else if imageClassifier.category == "Portrait" {
-            imageView.image = editPhoto.addInstantFilmFilter(image: imageView.image!)
-            imageView.image = editPhoto.addGammaLight(image: imageView.image!)
+        if self.imageView.image != nil {
+            imageClassifier.updateClassifications(for: imageView.image!)
+            if imageClassifier.category == "Landscape" {
+                imageView.image = editPhoto.addFilmFilter(image: imageView.image!)
+                imageView.image = editPhoto.addToneCurve(image: imageView.image!)
+            }
+            else if imageClassifier.category == "Portrait" {
+                imageView.image = editPhoto.addInstantFilmFilter(image: imageView.image!)
+                imageView.image = editPhoto.addGammaLight(image: imageView.image!)
+            }
+            else {
+                imageView.image = editPhoto.convertToGrayScale(image: imageView.image!)
+            }
         }
         else {
-            imageView.image = editPhoto.convertToGrayScale(image: imageView.image!)
+            alertNilImage()
         }
     }
     
